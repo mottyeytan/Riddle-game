@@ -11,7 +11,7 @@ import Riddle from './classes/Riddle.js';
 
 const player = new Player();
 
-const riddlesClass = riddles.map(r => new Riddle(r.id, r.difficulty, r.name, r.taskDescription, r.correctAnswer));
+const riddlesClass = riddles.map(r => new Riddle(r.id, r.difficulty, r.timelimit, r.name, r.taskDescription, r.correctAnswer));
 
 
 
@@ -25,6 +25,7 @@ player.name = name;
 
 const difficulty = player.chooseDifficulty();
 const filterRiddles = riddlesClass.filter(r => r.difficulty === difficulty);
+console.log("")
 
 
 
@@ -36,4 +37,4 @@ for (let i = 0; i < filterRiddles.length; i++){
     player.times.push(time);
 } 
 
-player.showStats();
+player.showStats(filterRiddles);

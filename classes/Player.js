@@ -11,7 +11,7 @@ class Player{
         return (end - start) / 1000;
     }
 
-    showStats(){
+    showStats(riddles){
         let totalTime = 0;
         let averageTime = 0;
         for(let i = 0; i < this.times.length; i++){
@@ -22,6 +22,13 @@ class Player{
         console.log(`great job ${this.name}!`)
         console.log(`Total time: ${totalTime} seconds`);
         console.log(`Average per riddle:: ${averageTime} seconds`);
+        
+        // Check for time penalties
+        const penaltyTime = riddles.find(r => r.timeLimit)
+        if (riddles.some(r => r.isPassedTime)) {
+            console.log("");
+            console.log(`Time limit penalty applied. it took you more than ${penaltyTime.timeLimit} seconds`);
+        }
     }
 
     chooseDifficulty(){
