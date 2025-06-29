@@ -1,3 +1,4 @@
+import chalk from 'chalk';
 import readline from "readline-sync";
 
 
@@ -10,7 +11,7 @@ import Riddle from './classes/Riddle.js';
 
 const player = new Player();
 
-const riddlesClass = riddles.map(r => new Riddle(r.id, r.name, r.taskDescription, r.correctAnswer));
+const riddlesClass = riddles.map(r => new Riddle(r.id, r.difficulty, r.name, r.taskDescription, r.correctAnswer));
 
 
 
@@ -22,10 +23,14 @@ console.log("")
 
 player.name = name;
 
+const difficulty = player.chooseDifficulty();
+const filterRiddles = riddlesClass.filter(r => r.difficulty === difficulty);
 
-for (let i = 0; i < riddlesClass.length; i++){
+
+
+for (let i = 0; i < filterRiddles.length; i++){
     let start = Date.now();
-    riddlesClass[i].ask();
+    filterRiddles[i].ask();
     let end = Date.now();
     const time = player.recordTime(start, end);
     player.times.push(time);
