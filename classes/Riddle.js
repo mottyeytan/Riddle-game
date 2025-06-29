@@ -1,10 +1,11 @@
 import readline from "readline-sync";
 
 class Riddle {
-    constructor(id, difficulty, timeLimit, name, taskDescription, correctAnswer){
+    constructor(id, difficulty, timeLimit, hint, name, taskDescription, correctAnswer){
         this.id = id;
         this.difficulty = difficulty;
         this.timeLimit = timeLimit;
+        this.hint = hint;
         this.isPassedTime = false;
         this.name = name ;
         this.taskDescription = taskDescription;
@@ -15,6 +16,20 @@ class Riddle {
         console.log(this.name)
         console.log("------------------")
         console.log(this.taskDescription);
+        console.log("")
+
+        const hint = readline.question("do you want a hint? yes/no: ")
+        if (hint === "yes"){
+            console.log("");
+            console.log(this.hint);
+            console.log("");
+
+            this.isPassedTime = true;
+        }
+        else{
+            console.log("");
+        }
+
         const start = Date.now();
         
         let userAnswer = readline.question("Enter your answer: ");

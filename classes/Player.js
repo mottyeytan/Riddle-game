@@ -27,7 +27,7 @@ class Player{
         const penaltyTime = riddles.find(r => r.timeLimit)
         if (riddles.some(r => r.isPassedTime)) {
             console.log("");
-            console.log(`Time limit penalty applied. it took you more than ${penaltyTime.timeLimit} seconds`);
+            console.log(`Time limit penalty applied. it took you more than ${penaltyTime.timeLimit} seconds. or you have used the hint`);
         }
     }
 
