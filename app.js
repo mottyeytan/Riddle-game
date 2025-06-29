@@ -20,15 +20,17 @@ const riddlesClass = riddles.map(r => new Riddle(r.id, r.difficulty, r.name, r.t
 console.log("welcome to the riddle game")
 const name = readline.question("what's your name? ");
 console.log("")
-const difficulty = player.chooseDifficulty()
-const filterriddles = riddlesClass.filter(r => r.difficulty === difficulty)
 
 player.name = name;
 
+const difficulty = player.chooseDifficulty();
+const filterRiddles = riddlesClass.filter(r => r.difficulty === difficulty);
 
-for (let i = 0; i < filterriddles.length; i++){
+
+
+for (let i = 0; i < filterRiddles.length; i++){
     let start = Date.now();
-    filterriddles[i].ask();
+    filterRiddles[i].ask();
     let end = Date.now();
     const time = player.recordTime(start, end);
     player.times.push(time);

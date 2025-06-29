@@ -25,7 +25,7 @@ class Player{
     }
 
     chooseDifficulty(){
-        const option = readline.question("please choose: \n1: easy\n2:medium\n3:hard ");
+        const option = readline.question("please choose: \n1: easy\n2: medium\n3: hard\n");
     switch (option){
         case "1":
             return "easy";
