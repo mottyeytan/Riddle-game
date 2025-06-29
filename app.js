@@ -11,7 +11,7 @@ import Riddle from './classes/Riddle.js';
 
 const player = new Player();
 
-const riddlesClass = riddles.map(r => new Riddle(r.id, r.difficulty, r.timelimit, r.name, r.taskDescription, r.correctAnswer));
+const riddlesClass = riddles.map(r => new Riddle(r.id, r.difficulty, r.timelimit,r.hint, r.name, r.taskDescription, r.correctAnswer));
 
 
 
