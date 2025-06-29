@@ -2,20 +2,23 @@
   "name": "riddle_project",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "keywords": [],
+  "homepage": "https://github.com/mottyeytan/Riddle-game#readme",
+  "bugs": {
+    "url": "https://github.com/mottyeytan/Riddle-game/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mottyeytan/Riddle-game.git"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
+  "author": "",
   "type": "module",
-  "bugs": {
-    "url": "https://github.com/mottyeytan/Riddle-game/issues"
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://github.com/mottyeytan/Riddle-game#readme"
+  "dependencies": {
+    "chalk": "^5.4.1"
+  }
 }
