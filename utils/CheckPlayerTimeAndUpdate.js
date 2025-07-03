@@ -7,10 +7,10 @@ async function checkPlayerTimeAndUpdate(name, time){
 
         const players = JSON.parse(data);
 
-        const player = players.find(player => player.name === name)
+        const index = players.findIndex(player => player.name === name)
 
-        if (!player.record || player.record > time){
-            player.record = time;
+        if (!players[index].record || players[index].record > time){
+            players[index].record = time;
             await writeFile('players.txt', JSON.stringify(players, null, 2), 'utf-8');
             console.log(`New record for ${name}: ${time} seconds`);
             return true;
