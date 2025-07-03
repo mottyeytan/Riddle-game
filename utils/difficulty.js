@@ -17,4 +17,4 @@ function chooseDifficulty(input){
     }
 }
 
-module.exports = chooseDifficulty
+export default chooseDifficulty;
