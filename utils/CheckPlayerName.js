@@ -1,5 +1,4 @@
 import {readFile}  from 'fs/promises'
-import { Long } from 'mongodb';
 
 async function checkPlayerName(name){
     try{
@@ -17,10 +16,6 @@ async function checkPlayerName(name){
 
 
 }
-
-checkPlayerName("motty").then(result => {
-    console.log(result);
-});    
 
 
 export default checkPlayerName;

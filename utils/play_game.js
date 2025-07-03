@@ -1,15 +1,18 @@
 import checkPlayerName from './CheckPlayerName.js';
 import checkPlayerTimeAndUpdate from './CheckPlayerTimeAndUpdate.js';
-import Player from './classes/Player.js';
-import Riddle from './classes/Riddle.js';
+import Player from '../classes/Player.js';
+import Riddle from '../classes/Riddle.js';
 import createPlayer from './CreatePlayer.js';
 
-const player = new Player();
+import readline from 'readline-sync';
+import { r1, r2, r3 } from '../riddles/index.js';
 
+const player = new Player();
+const riddles = [r1, r2, r3];
 const riddlesClass = riddles.map(r => new Riddle(r.id, r.difficulty, r.timelimit,r.hint, r.name, r.taskDescription, r.correctAnswer));
 
 
-function playGame(difficulty){
+async function playGame(difficulty){
 
     console.log("welcome to the riddle game")
     const name = readline.question("what's your name? ");
@@ -17,9 +20,9 @@ function playGame(difficulty){
 
     player.name = name;
 
-    if(!checkPlayerName(player.name)){
+    if(!(await checkPlayerName(name))){
 
-        createPlayer(player.name)
+        await createPlayer(name)
 
     }
 
@@ -44,3 +47,5 @@ function playGame(difficulty){
 
 
 }
+
+export default playGame;
