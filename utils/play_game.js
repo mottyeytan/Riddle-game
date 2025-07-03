@@ -3,13 +3,12 @@ import checkPlayerTimeAndUpdate from './CheckPlayerTimeAndUpdate.js';
 import Player from '../classes/Player.js';
 import Riddle from '../classes/Riddle.js';
 import createPlayer from './CreatePlayer.js';
-
+import readRiddle from '../riddleutils/readRiddle.js';
 import readline from 'readline-sync';
-import { r1, r2, r3 } from '../riddles/index.js';
 
 const player = new Player();
-const riddles = [r1, r2, r3];
-const riddlesClass = riddles.map(r => new Riddle(r.id, r.difficulty, r.timelimit,r.hint, r.name, r.taskDescription, r.correctAnswer));
+const riddles = await readRiddle();
+const riddlesClass = riddles.map(r => new Riddle(r.id, r.difficulty, r.timeLimit,r.hint, r.name, r.description, r.correctAnswer));
 
 
 async function playGame(difficulty){

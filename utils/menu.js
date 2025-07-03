@@ -1,6 +1,10 @@
 import chooseDifficulty from './difficulty.js';
 import playGame from './play_game.js';
 import readline from 'readline-sync';
+import createRiddle from '../riddleutils/createriddle.js';
+import readRiddle from '../riddleutils/readRiddle.js';
+import updateRiddle from '../riddleutils/updateRiddle.js';
+import deleteRiddle from '../riddleutils/deleteRiddle.js';
 
 async function menu(){
 
@@ -20,16 +24,17 @@ async function menu(){
         await playGame(diffi);
     }
     else if(option === "2"){
+        await createRiddle();
 
     }
     else if(option === "3"){
-
+        await readRiddle();
     }
     else if(option === "4"){
-
+        await updateRiddle();
     }
     else if(option === "5"){
-
+        await deleteRiddle();
     }
     else if(option === "6"){
 
