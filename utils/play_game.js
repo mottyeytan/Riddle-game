@@ -17,15 +17,28 @@ function playGame(difficulty){
 
     player.name = name;
 
-    if(!checkPlayerName()){
+    if(!checkPlayerName(player.name)){
 
         createPlayer(player.name)
 
     }
 
-    const difficulty = player.chooseDifficulty();
     const filterRiddles = riddlesClass.filter(r => r.difficulty === difficulty);
     console.log("")
+
+    for (let i = 0; i < filterRiddles.length; i++){
+        let start = Date.now();
+        filterRiddles[i].ask();
+        let end = Date.now();
+        const time = player.recordTime(start, end);
+        player.times.push(time);
+    } 
+
+    player.showStats(filterRiddles);
+
+
+
+
 
 
 

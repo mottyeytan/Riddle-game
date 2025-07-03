@@ -1,6 +1,5 @@
 
-function checkPlayerTimeAndUpdate(){
+async function checkPlayerTimeAndUpdate(name){
 
 }
 
-module.exports = checkPlayerTimeAndUpdate;
