@@ -5,6 +5,9 @@ class Player{
     constructor(){
         this.name = "";
         this.times = [];
+        this.TotalTime = 0;
+        this.AverageTime = 0;
+        this.lowestTime = 0;
     }
 
     recordTime(start, end){
@@ -17,6 +20,8 @@ class Player{
         for(let i = 0; i < this.times.length; i++){
             totalTime += this.times[i];
         }
+        this.AverageTime = averageTime
+        this.TotalTime = totalTime
         averageTime = totalTime / this.times.length;
         console.log("")
         console.log(`great job ${this.name}!`)
@@ -31,23 +36,23 @@ class Player{
         }
     }
 
-    chooseDifficulty(){
-        const option = readline.question("please choose: \n1: easy\n2: medium\n3: hard\n");
-    switch (option){
-        case "1":
-            return "easy";
+    // chooseDifficulty(){
+    //     const option = readline.question("please choose: \n1: easy\n2: medium\n3: hard\n");
+    // switch (option){
+    //     case "1":
+    //         return "easy";
         
-        case "2":
-            return "medium"
+    //     case "2":
+    //         return "medium"
         
-        case "3": 
-            return "hard"
+    //     case "3": 
+    //         return "hard"
         
-        default:
-            console.log("Invalid option, defaulting to 'easy'.");
-            return "easy";
-    }
-    }
+    //     default:
+    //         console.log("Invalid option, defaulting to 'easy'.");
+    //         return "easy";
+    // }
+    // }
 }
 
 export default Player;
