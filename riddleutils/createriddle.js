@@ -1,4 +1,5 @@
-import { readFile, writeFile, exists } from "fs/promises";
+import { readFile, writeFile } from "fs/promises";
+import { existsSync } from "fs";
 
 import readline from "readline-sync";
 
@@ -12,8 +13,10 @@ async function createRiddle(riddle){
     const correctAnswer = readline.question("Enter the correct answer: ");
 
     let riddles = []
+    let newID = 1;
 
     const newRiddle = {
+        id: newID,
         name: riddleName,
         description: riddleDescription,
         correctAnswer: correctAnswer,
@@ -22,10 +25,15 @@ async function createRiddle(riddle){
         hint: hint
     }
 
-    if(await exists('riddles.txt')){
+    if(existsSync('riddles.txt')){
         try{
             const data = await readFile('riddles.txt', 'utf-8');
             const riddles = JSON.parse(data);
+            
+            if(riddles.length>0){
+                const lastID = riddles[riddles.length -1].id
+                newID = lastID +1
+            }
             riddles.push(newRiddle);
             
         }catch(err){

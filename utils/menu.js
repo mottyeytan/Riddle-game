@@ -39,12 +39,6 @@ async function menu(){
     else if(option === "6"){
 
     }
-
-
-
-
-    
-    
     
 }
 

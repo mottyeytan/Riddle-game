@@ -8,7 +8,7 @@ import readline from 'readline-sync';
 
 const player = new Player();
 const riddles = await readRiddle();
-const riddlesClass = riddles.map(r => new Riddle(r.id, r.difficulty, r.timeLimit,r.hint, r.name, r.description, r.correctAnswer));
+const riddlesClass = riddles.map(r => new Riddle(r.id, r.difficulty, r.timeLimit, r.hint, r.name, r.description, r.correctAnswer));
 
 
 async function playGame(difficulty){

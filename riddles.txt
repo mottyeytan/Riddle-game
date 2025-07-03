@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "difficulty": "easy",
+    "timeLimit": 10,
+    "hint": "half of 50",
+    "name": "easy math",
+    "taskDescription": "what is 5 * 5?",
+    "correctAnswer": "25"
+  },
+  {
+    "id": 2,
+    "difficulty": "medium",
+    "timeLimit": 12,
+    "hint": "its a food",
+    "name": "whats that",
+    "taskDescription": "What has to be broken before you can use it?",
+    "correctAnswer": "egg"
+  },
+  {
+    "id": 3,
+    "difficulty": "medium",
+    "timeLimit": 7,
+    "hint": "its a even number above 5",
+    "name": "medium math",
+    "taskDescription": "what is 5 + 7 / 2?",
+    "correctAnswer": "6"
+  }
+]
