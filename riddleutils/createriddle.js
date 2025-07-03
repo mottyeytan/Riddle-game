@@ -12,8 +12,10 @@ async function createRiddle(riddle){
     const correctAnswer = readline.question("Enter the correct answer: ");
 
     let riddles = []
+    let newID = 1;
 
     const newRiddle = {
+        id: newID,
         name: riddleName,
         description: riddleDescription,
         correctAnswer: correctAnswer,
@@ -26,6 +28,11 @@ async function createRiddle(riddle){
         try{
             const data = await readFile('riddles.txt', 'utf-8');
             const riddles = JSON.parse(data);
+            
+            if(riddles.length>0){
+                const lastID = riddles[riddles.length -1].id
+                newID = lastID +1
+            }
             riddles.push(newRiddle);
             
         }catch(err){
