@@ -15,7 +15,31 @@ function menu(){
     console.log("3. Read the riddles");
     console.log("4. Update an exsiting riddle");
     console.log("5. Delete a riddle");
-    console.log("5. View leaderboard");
+    console.log("6. View leaderboard");
+
+    rl.question("enter you choice: ", (option)=>{
+        if(option==="1"){
+            rl.question("choose the difficuly og the game:\n1. easy\n2. medium\n.3. hard")
+
+        }
+        else if(option === "2"){
+
+        }
+        else if(option === "3"){
+
+        }
+        else if(option === "4"){
+
+        }
+        else if(option === "5"){
+
+        }
+        else if(option === "6"){
+
+        }
+    })
+
+
     
     
     
