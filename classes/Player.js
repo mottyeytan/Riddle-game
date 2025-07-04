@@ -37,7 +37,7 @@ class Player{
         console.log(`Average per riddle:: ${averageTime} seconds`);
 
         if(checkPlayerTimeAndUpdate(this.name, this.totalTime)){
-            // console.log("New record!");
+         console.log(`New record for ${this.name}: ${totalTime} seconds`);
             this.lowestTime = totalTime;     
         }
         

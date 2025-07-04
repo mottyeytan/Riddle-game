@@ -12,7 +12,7 @@ async function checkPlayerTimeAndUpdate(name, time){
         if (!players[index].record || players[index].record > time){
             players[index].record = time;
             await writeFile('players.txt', JSON.stringify(players, null, 2), 'utf-8');
-            console.log(`New record for ${name}: ${time} seconds`);
+            
             return true;
         } else {
             

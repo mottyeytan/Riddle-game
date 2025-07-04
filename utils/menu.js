@@ -25,10 +25,9 @@ async function menu(){
     }
     else if(option === "2"){
         await createRiddle();
-
     }
     else if(option === "3"){
-        await readRiddle();
+        await readRiddle(true);
     }
     else if(option === "4"){
         await updateRiddle();
