@@ -1,4 +1,4 @@
-# 🧩 Riddle Game - Challenge Your Mind! 🧠
+# 🧩 Riddle Game:
 
 ## 📝 Description 
 An interactive command-line riddle game with beautiful ASCII art, colorful interface, animations, and comprehensive player management. Challenge yourself with riddles of different difficulty levels and compete for the best time!
