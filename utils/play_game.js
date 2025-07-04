@@ -16,9 +16,9 @@ async function playGame(difficulty){
 
     player.name = name;
 
-    if(!(await checkPlayerName(name))){
+    if(!(await checkPlayerName(player.name))){
 
-        await createPlayer(name)
+        await createPlayer(player.name)
 
     }
 

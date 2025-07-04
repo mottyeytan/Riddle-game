@@ -7,9 +7,7 @@ class Player{
     constructor(){
         this.name = "";
         this.times = [];
-        this.TotalTime = 0;
-        this.AverageTime = 0;
-        this.lowestTime = 0;
+        
     }
 
     recordTime(start, end){
@@ -27,8 +25,7 @@ class Player{
 
         averageTime = totalTime / this.times.length;
 
-        this.AverageTime = averageTime
-        this.TotalTime = totalTime
+        
 
         
         console.log("")
@@ -36,9 +33,8 @@ class Player{
         console.log(`Total time: ${totalTime} seconds`);
         console.log(`Average per riddle:: ${averageTime} seconds`);
 
-        if(checkPlayerTimeAndUpdate(this.name, this.totalTime)){
-         console.log(`New record for ${this.name}: ${totalTime} seconds`);
-            this.lowestTime = totalTime;     
+        if(await checkPlayerTimeAndUpdate(this.name, totalTime)){
+            console.log(`New record for ${this.name}: ${totalTime} seconds`);
         }
         
         // Check for time penalties

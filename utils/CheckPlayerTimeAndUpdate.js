@@ -1,4 +1,5 @@
 import { readFile, writeFile } from "fs/promises";
+import checkPlayerName from "./CheckPlayerName.js";
 
 async function checkPlayerTimeAndUpdate(name, time){
     
@@ -10,6 +11,7 @@ async function checkPlayerTimeAndUpdate(name, time){
         const index = players.findIndex(player => player.name === name)
 
         if (!players[index].record || players[index].record > time){
+            
             players[index].record = time;
             await writeFile('players.txt', JSON.stringify(players, null, 2), 'utf-8');
             

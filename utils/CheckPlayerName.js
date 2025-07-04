@@ -4,16 +4,15 @@ async function checkPlayerName(name){
     try{
         const data = await readFile('players.txt', 'utf-8');
         
-        const convert = JSON.parse(data)
+        const players = JSON.parse(data);
 
-        const found = convert.some(player => player.name === name)
-        return found
+        const found = players.some(player => player.name === name);
+        
+        return found;
     
     }catch(err){console.log(err);
         return false;
     }
-    
-
 
 }
 

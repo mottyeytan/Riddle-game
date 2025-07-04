@@ -11,6 +11,7 @@ async function createPlayer(name) {
             const data = await readFile('players.txt', 'utf-8')
     
             players = JSON.parse(data)
+            
             if(players.length>0){
                 const lastID = players[players.length -1].id
                 newID = lastID +1
