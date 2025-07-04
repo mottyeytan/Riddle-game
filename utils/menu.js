@@ -5,6 +5,7 @@ import createRiddle from '../riddleutils/createriddle.js';
 import readRiddle from '../riddleutils/readRiddle.js';
 import updateRiddle from '../riddleutils/updateRiddle.js';
 import deleteRiddle from '../riddleutils/deleteRiddle.js';
+import viewLeadboard from '../services/ViewLeadboard.js';
 
 async function menu(){
 
@@ -36,6 +37,7 @@ async function menu(){
         await deleteRiddle();
     }
     else if(option === "6"){
+        await viewLeadboard();
 
     }
     

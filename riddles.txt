@@ -1,29 +1,11 @@
 [
   {
     "id": 1,
-    "name": "What has keys, but no locks; space, but no room; and you can enter, but not go in?",
-    "description": "A classic riddle about a common object",
+    "name": "A classic riddle about a common object",
+    "description": "What has keys, but no locks; space, but no room; and you can enter, but not go in?",
     "correctAnswer": "keyboard",
     "difficulty": "easy",
     "timeLimit": "30",
     "hint": "You use this to type"
-  },
-  {
-    "id": 2,
-    "name": "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?",
-    "description": "A natural phenomenon that makes sound",
-    "correctAnswer": "echo",
-    "difficulty": "medium",
-    "timeLimit": "45",
-    "hint": "You hear this in mountains"
-  },
-  {
-    "id": 3,
-    "name": "The more you take, the more you leave behind. What am I?",
-    "description": "Think about what you leave when you walk",
-    "correctAnswer": "footsteps",
-    "difficulty": "easy",
-    "timeLimit": "25",
-    "hint": "You make these when you walk"
   }
 ]

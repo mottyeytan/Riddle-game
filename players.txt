@@ -3,5 +3,10 @@
     "id": 1,
     "name": "motty",
     "record": 72.939
+  },
+  {
+    "id": 1,
+    "name": "yakov",
+    "record": 17.445
   }
 ]
