@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "motty",
-    "record": 25.899
+    "record": 16.605
   },
   {
     "id": 1,
@@ -13,5 +13,10 @@
     "id": 2,
     "name": "mottty",
     "record": 24.395
+  },
+  {
+    "id": 3,
+    "name": "momo",
+    "record": 14.023
   }
 ]

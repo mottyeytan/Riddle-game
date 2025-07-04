@@ -1,5 +1,6 @@
 import readline from "readline-sync";
 import checkPlayerTimeAndUpdate from "../services/CheckPlayerTimeAndUpdate.js";
+import { printGameStats, celebrate } from "../utils/coolPrint.js";
 
 
 
@@ -20,28 +21,25 @@ class Player{
         for(let i = 0; i < this.times.length; i++){
             totalTime += this.times[i];
         }
-        
-        
 
         averageTime = totalTime / this.times.length;
 
+        // Check if it's a new record
+        const isNewRecord = await checkPlayerTimeAndUpdate(this.name, totalTime);
         
-
-        
-        console.log("")
-        console.log(`great job ${this.name}!`)
-        console.log(`Total time: ${totalTime} seconds`);
-        console.log(`Average per riddle:: ${averageTime} seconds`);
-
-        if(await checkPlayerTimeAndUpdate(this.name, totalTime)){
-            console.log(`New record for ${this.name}: ${totalTime} seconds`);
-        }
+        // Display cool stats
+        printGameStats(this.name, totalTime, averageTime, isNewRecord);
         
         // Check for time penalties
         const penaltyTime = riddles.find(r => r.timeLimit)
         if (riddles.some(r => r.isPassedTime)) {
             console.log("");
-            console.log(`Time limit penalty applied. it took you more than ${penaltyTime.timeLimit} seconds. or you have used the hint`);
+            console.log(`⚠️  Time limit penalty applied. It took you more than ${penaltyTime.timeLimit} seconds or you used the hint`);
+        }
+        
+        // Celebration if new record
+        if (isNewRecord) {
+            await celebrate();
         }
     }
 

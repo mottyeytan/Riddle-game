@@ -1,4 +1,5 @@
 
+import { printDifficultyMenu, printWarning } from '../utils/coolPrint.js';
 
 function chooseDifficulty(input){
     switch (input){
@@ -12,9 +13,14 @@ function chooseDifficulty(input){
             return "hard"
         
         default:
-            console.log("Invalid option, defaulting to 'easy'.");
+            printWarning("Invalid option, defaulting to 'easy'.");
             return "easy";
     }
+}
+
+// Function to show difficulty menu
+export function showDifficultyMenu() {
+    printDifficultyMenu();
 }
 
 export default chooseDifficulty;
