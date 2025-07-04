@@ -7,7 +7,11 @@ async function readRiddle(showTable = false){
         const riddles = JSON.parse(data);
         
         if (showTable) {
-            console.table(riddles);
+            console.table(riddles.map(r => ({
+                id: r.id,
+                name: r.name,
+                riddles: r.description
+            })));
         }
         
         return riddles;

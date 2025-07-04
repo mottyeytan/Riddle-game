@@ -35,13 +35,6 @@ async function playGame(difficulty){
 
     player.showStats(filterRiddles);
 
-
-
-
-
-
-
-
 }
 
 export default playGame;

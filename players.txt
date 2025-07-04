@@ -1,32 +1,7 @@
 [
   {
     "id": 1,
-    "name": "motty"
-  },
-  {
-    "id": 2,
-    "name": "momo"
-  },
-  {
-    "id": 3,
-    "name": "mop"
-  },
-  {
-    "id": 4,
-    "name": "gabi"
-  },
-  {
-    "id": 5,
-    "name": "mmm"
-  },
-  {
-    "id": 6,
-    "name": "ddd",
-    "record": 5.992
-  },
-  {
-    "id": 7,
-    "name": "mmmmm",
-    "record": 18.047
+    "name": "motty",
+    "record": 72.939
   }
 ]
