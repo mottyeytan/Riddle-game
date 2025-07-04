@@ -4,7 +4,7 @@ import checkPlayerName from "./CheckPlayerName.js";
 async function checkPlayerTimeAndUpdate(name, time){
     
     try{
-        const data = await readFile('players.txt', 'utf-8');
+        const data = await readFile('db/players.txt', 'utf-8');
 
         const players = JSON.parse(data);
 
@@ -13,7 +13,7 @@ async function checkPlayerTimeAndUpdate(name, time){
         if (!players[index].record || players[index].record > time){
             
             players[index].record = time;
-            await writeFile('players.txt', JSON.stringify(players, null, 2), 'utf-8');
+            await writeFile('db/players.txt', JSON.stringify(players, null, 2), 'utf-8');
             
             return true;
         } else {

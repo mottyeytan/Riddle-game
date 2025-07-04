@@ -2,7 +2,7 @@ import {readFile}  from 'fs/promises'
 
 async function checkPlayerName(name){
     try{
-        const data = await readFile('players.txt', 'utf-8');
+        const data = await readFile('db/players.txt', 'utf-8');
         
         const players = JSON.parse(data);
 

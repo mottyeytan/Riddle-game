@@ -14,30 +14,35 @@ async function createRiddle(){
     let riddles = [];
     let newID = 1;
 
+    try{
+        const data = await readFile('db/riddles.txt', 'utf-8');
+
+        if (data.trim() !== ''){
+            riddles = JSON.parse(data);
+            if (riddles.length > 0) {
+                const lastID = riddles[riddles.length -1].id
+                newID = lastID +1
+            }
+        }
+        
+    }catch(err){
+        console.log(err);
+    }
+
     const newRiddle = {
         id: newID,
         name: riddleName,
         description: riddleDescription,
         correctAnswer: correctAnswer,
         difficulty: difficulty,
-        timeLimit: timeLimit,
+        timeLimit: parseInt(timeLimit),
         hint: hint
     }
 
+    riddles.push(newRiddle);
     
-        try{
-            const data = await readFile('riddles.txt', 'utf-8');
-
-            if (data.trim() !== ''){
-                riddles = JSON.parse(data);
-                const lastID = riddles[riddles.length -1].id
-                newID = lastID +1
-                riddles.push(newRiddle);
-            }else{
-                riddles.push(newRiddle);
-            }
-            
-            await writeFile('riddles.txt', JSON.stringify(riddles, null, 2), 'utf-8');
+    try{
+        await writeFile('db/riddles.txt', JSON.stringify(riddles, null, 2), 'utf-8');
             
             
         }catch(err){

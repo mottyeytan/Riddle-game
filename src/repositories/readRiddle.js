@@ -3,7 +3,7 @@ import { readFile } from "fs/promises";
 // we can use it also to import the riddles to the game
 async function readRiddle(showTable = false){
     try{
-        const data = await readFile('riddles.txt', 'utf-8');
+        const data = await readFile('db/riddles.txt', 'utf-8');
         const riddles = JSON.parse(data);
         
         if (showTable) {

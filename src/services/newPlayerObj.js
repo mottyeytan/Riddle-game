@@ -1,4 +1,4 @@
-import Player from "../classes/Player.js";
+import Player from "../models/Player.js";
 
 function newPlayerObj(){
     return new Player();

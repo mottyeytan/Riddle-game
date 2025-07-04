@@ -1,5 +1,5 @@
 import readline from "readline-sync";
-import checkPlayerTimeAndUpdate from "../utils/CheckPlayerTimeAndUpdate.js";
+import checkPlayerTimeAndUpdate from "../services/CheckPlayerTimeAndUpdate.js";
 
 
 

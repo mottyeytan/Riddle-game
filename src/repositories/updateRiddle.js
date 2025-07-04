@@ -1,4 +1,5 @@
 import { readFile, writeFile } from "fs/promises";
+import readline from "readline-sync";
 
 async function updateRiddle(){
     const id = readline.question("Enter the id of the riddle you want to update: ");
@@ -7,6 +8,7 @@ async function updateRiddle(){
     
     let newRiddle = {}
     let fullRiddle = {}
+    let riddleName, riddleDescription, correctAnswer, difficulty, timeLimit, hint;
     
     switch(question){
         case "1":
@@ -75,9 +77,9 @@ async function updateRiddle(){
     }
     
     try{
-        const data = await readFile('riddles.txt', 'utf-8');
+        const data = await readFile('db/riddles.txt', 'utf-8');
         const riddles = JSON.parse(data);
-        const index = riddles.findIndex(riddle => riddle.id === id);
+        const index = riddles.findIndex(riddle => riddle.id === parseInt(id));
 
         if (index !== -1){
             if (fullRiddle){
@@ -107,7 +109,7 @@ async function updateRiddle(){
             return;
         }
 
-        await writeFile('riddles.txt', JSON.stringify(riddles, null, 2), 'utf-8');
+        await writeFile('db/riddles.txt', JSON.stringify(riddles, null, 2), 'utf-8');
         console.log("Riddle updated successfully");
 
 

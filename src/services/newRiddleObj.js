@@ -1,5 +1,5 @@
-import Riddle from "../classes/Riddle.js";
-import readRiddle from "../riddleutils/readRiddle.js";
+import Riddle from "../models/Riddle.js";
+import readRiddle from "../repositories/readRiddle.js";
 
 async function newRiddleObj(){
     const riddles = await readRiddle(false);

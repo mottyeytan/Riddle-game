@@ -2,8 +2,9 @@ import checkPlayerName from './CheckPlayerName.js';
 import checkPlayerTimeAndUpdate from './CheckPlayerTimeAndUpdate.js';
 import createPlayer from './CreatePlayer.js';
 import readline from 'readline-sync';
-import newPlayerObj from '../services/newPlayerObj.js';
-import newRiddleObj from '../services/newRiddleObj.js';
+import newPlayerObj from './newPlayerObj.js';
+import newRiddleObj from './newRiddleObj.js';
+import getRecordByname from './getRecordByname.js';
 
 async function playGame(difficulty){
 
@@ -19,7 +20,8 @@ async function playGame(difficulty){
     if(!(await checkPlayerName(player.name))){
 
         await createPlayer(player.name)
-
+    }else{
+        console.log(`hi ${player.name} your previous record is ${await getRecordByname(player.name)}`)
     }
 
     const filterRiddles = riddles.filter(r => r.difficulty === difficulty);
